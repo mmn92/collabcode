@@ -25,3 +25,21 @@ a {
   color: inherit;
   margin-left: 60px;
 }
+
+main {
+  background-color: #e24647;
+  margin: 0 115px;
+  overflow: hidden;
+  padding-right: 165px;
+  padding-bottom: 65px;
+}
+
+button {
+  background-color: #252c41;
+  height: 60px;
+  width: 200px;
+  border: solid 2px #252c41;
+  color: #fff;
+  font-size: 20px;
+  float: right;
+}
