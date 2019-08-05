@@ -1,0 +1,18 @@
+.button-store {
+  display: inline-block;
+  text-align: center;
+  line-height: 60px;
+  width: 200px;
+  height: 60px;
+  background-color: #252c41;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.cart {
+  width: 220px;
+  border: solid 2px #fff;
+  background-color: rgba(37, 44, 65, 0);
+  line-height: normal;
+}
