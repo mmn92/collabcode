@@ -1,7 +1,7 @@
 .container-store {
   background-color: #e24647;
   position: absolute;
-  width: 80%;
+  width: 1370px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -14,6 +14,9 @@
 /* styling the dl, di and dd */
 .product-description {
   margin-top: 150px;
+  margin-right: 60px;
+  max-width: 553px;
+  float: right;
 }
 
 .description-title {
