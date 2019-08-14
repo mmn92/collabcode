@@ -1,64 +1,12 @@
 .container-store {
   background-color: #e24647;
   position: absolute;
-  width: 1370px;
+  width: 90%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 55px 60px 95px;
+  padding: 55px 60px 95px 0;
   box-shadow: 0 0 39px 0 rgba(50, 50, 50, 0.36);
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-/* styling the dl, di and dd */
-.product-description {
-  margin-top: 150px;
-  margin-right: 60px;
-  max-width: 553px;
-  float: right;
-}
-
-.description-title {
-  font-size: 25px;
-  margin-bottom: 100px;
-}
-
-.product-detail {
-  font-size: 20px;
-}
-
-.product-detail.-score {
-  margin-left: 8.5px;
-}
-
-.product-detail.-pricing {
-  margin-top: 25px;
-}
-
-.product-detail.-description {
-  margin-top: 70px;
-  margin-bottom: 35px;
-}
-
-.product-detail.-additional-info {
-  margin-bottom: 100px;
-}
-
-.show-more {
-  text-decoration: none;
-  color: inherit;
-}
-
-.product-detail.-page-button {
-  display: inline-block;
-  margin-right: 38px;
-}
-
-#transportation {
-  margin-right: 82px;
-}
-
-#price {
-  margin-right: 77px;
 }

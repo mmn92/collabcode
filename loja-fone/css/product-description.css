@@ -1,0 +1,51 @@
+/*
+.product-description {  
+  margin-top: 150px;
+  margin-right: 60px;
+  max-width: 553px;
+  float: right;
+
+}
+*/
+.product-description > .description-title {
+  font-size: 25px;
+  margin-bottom: 100px;
+}
+
+.product-description > .product-detail {
+  font-size: 20px;
+}
+
+.product-description > .product-detail.-score {
+  margin-left: 8.5px;
+}
+
+.product-description > .product-detail.-pricing {
+  margin-top: 25px;
+}
+
+.product-description > .product-detail.-pricing.-info {
+  width: 200px;
+  text-align: right;
+}
+
+.product-description > .product-detail.-description {
+  margin-top: 70px;
+  margin-bottom: 35px;
+  line-height: 30px;
+}
+
+.product-description .contrast {
+  text-transform: uppercase;
+  float: left;
+}
+
+.product-description .action {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-description > .product-detail.-page-button {
+  display: inline-block;
+  margin-right: 38px;
+}

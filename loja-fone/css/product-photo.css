@@ -1,26 +1,8 @@
 .product-photo {
-  float: left;
-  margin-top: 120px;
-  margin-left: -60px;
+  display: inline-block;
   background-color: #fff;
-  width: 600px;
   height: 574px;
   border-radius: 0 150px 150px 0;
-}
-
-/*
-.product-photo:before {
-  content: "";
-  position: absolute;
-  background-color: #fff;
-  height: 574px;
-  width: 470px;
-  margin-left: -200px;
-}
-*/
-
-.product-photo img {
-  position: absolute;
-  margin-left: 105px;
-  margin-top: 27px;
+  margin-right: 156px;
+  vertical-align: middle;
 }

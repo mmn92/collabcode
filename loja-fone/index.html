@@ -4,39 +4,40 @@
     <title>Loja de fone</title>
 
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/container-store.css">
-    <link rel="stylesheet" href="css/product-photo.css">
     <link rel="stylesheet" href="css/header-store.css">
+    <link rel="stylesheet" href="css/product-photo.css">
+    <link rel="stylesheet" href="css/product-wrapper.css">
+    <link rel="stylesheet" href="css/product-description.css">
     <link rel="stylesheet" href="css/button-store.css">
 </head>
 <body>
     <div class="container-store">
         <header class="header-store">
-            <h1 class="title">LOGO</h1>
+            <h1 class="title">Logo</h1>
 
             <nav class="navigation">
                 <a class="action" href="">Produtos</a>
                 <a class="action" href="">Serviços</a>
-                <a class="action last" href="">Carrinho (10)</a>
+                <a class="action -last" href="">Carrinho (10)</a>
             </nav>
         </header>
-        <dl class="product-description">
-            <dt class="description-title">Fone top, feliz e caro</dt>
-            <dd class="product-detail -score">4.0 (97)</dd>
-            <dd class="product-detail -pricing"><span id="transportation">FRETE</span> C$ 108</dd>
-            <dd class="product-detail -pricing"><span id="price">PREÇO</span> C$ 340</dd>
-            <dd class="product-detail -description">Fone TOP com um cor feliz que não tem fio. A cor também é algo que impressiona junto com o  seu layout modernão! Ele é caro? É! Mas compre que você não vai se arrepender e se você se arrepender pode vender no mercado livre..kkkk</dd>
-            <dd class="product-detail -additional-info"><a class="show-more" href="#">Saber mais...</a></dd>
-            <dd class="product-detail -page-button">
-                <button href="comprar.html" class="button-store -secondary">Adiciona no carrinho</button>
-            </dd>
-            <dd class="product-detail -page-button">
-                <a href="comprar.html" class="button-store">Comprar</a>
-            </dd>
-        </dl>   
-        <div class="product-photo">
-            <img src="assets/f141ef42f115832103688d3f21a84e63.png" alt="product photo">
-        </div>
+        <figure class="product-photo">
+            <img src="assets/f141ef42f115832103688d3f21a84e63.png" alt="Fone de ouvido">
+        </figure>
+        <section class="product-wrapper">
+            <dl class="product-description">
+                <dt class="description-title">Fone top, feliz e caro</dt>
+                <dd class="product-detail -score">4.0 (97)</dd>
+                <dd class="product-detail -pricing -info"><strong class="contrast">Frete</strong> C$ 108</dd>
+                <dd class="product-detail -pricing -info"><strong class="contrast">Preço</strong> C$ 340</dd>
+                <dd class="product-detail -description">Fone TOP com um cor feliz que não tem fio. A cor também é algo que impressiona junto com o  seu layout modernão! Ele é caro? É! Mas compre que você não vai se arrepender e se você se arrepender pode vender no mercado livre..kkkk</dd>
+                <dd class="product-detail"><a class="action" href="#">Saber mais...</a></dd>
+            </dl>
+    </section>
+        <button class="button-store -secondary" href="comprar.html">Adiciona no carrinho</button>
+        <a class="button-store" href="comprar.html">Comprar</a>
     </div>
 </body>
 </html>
