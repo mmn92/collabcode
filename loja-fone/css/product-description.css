@@ -1,15 +1,14 @@
-/*
-.product-description {  
-  margin-top: 150px;
-  margin-right: 60px;
-  max-width: 553px;
-  float: right;
-
-}
-*/
 .product-description > .description-title {
   font-size: 25px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+}
+
+.product-description > .product-avaliation {
+  margin-bottom: 25px;
+}
+
+.product-description .star {
+  margin-right: 8px;
 }
 
 .product-description > .product-detail {
