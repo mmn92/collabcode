@@ -17,6 +17,8 @@
 
 .button-store:hover {
   cursor: pointer;
+  background-color: #fff;
+  color: #252c41;
 }
 
 .button-store.-secondary {
@@ -25,6 +27,11 @@
   background-color: transparent;
   line-height: 56px;
   margin-right: 38px;
+}
+
+.button-store.-secondary:hover {
+  background-color: #fff;
+  color: #e24647;
 }
 
 .button-store > button,
