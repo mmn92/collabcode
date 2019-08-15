@@ -15,6 +15,10 @@
   border: none;
 }
 
+.button-store:hover {
+  cursor: pointer;
+}
+
 .button-store.-secondary {
   width: 218px;
   border: solid 2px #fff;

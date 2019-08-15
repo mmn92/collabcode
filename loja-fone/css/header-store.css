@@ -15,6 +15,10 @@
   text-transform: uppercase;
 }
 
+.header-store > .title:hover {
+  cursor: pointer;
+}
+
 .header-store .search {
   width: 360px;
   background-color: inherit;

@@ -11,6 +11,10 @@
   margin-right: 8px;
 }
 
+.product-description .star:hover {
+  cursor: pointer;
+}
+
 .product-description > .product-detail {
   font-size: 20px;
 }
