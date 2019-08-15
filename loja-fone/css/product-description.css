@@ -3,6 +3,12 @@
   margin-bottom: 50px;
 }
 
+.product-description > .hearts {
+  position: absolute;
+  top: 0;
+  transform: translate(calc(-100% - 46px), 9px);
+}
+
 .product-description > .product-avaliation {
   margin-bottom: 10px;
 }
