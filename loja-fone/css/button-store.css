@@ -13,12 +13,17 @@
   margin-right: 0;
   font-family: Arial, Helvetica, sans-serif;
   border: none;
+  transition: color 400ms linear, background-color 400ms linear;
 }
 
 .button-store:hover {
   cursor: pointer;
   background-color: #fff;
   color: #252c41;
+}
+
+.button-store:active {
+  transform: scale(0.9);
 }
 
 .button-store.-secondary {
