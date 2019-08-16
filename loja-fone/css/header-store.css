@@ -34,12 +34,24 @@
   text-decoration: none;
   color: inherit;
   margin-right: 60px;
+  position: relative;
 }
 
 .header-store .action.-last {
   margin-right: 0;
 }
 
-.header-store .action:hover {
-  border-bottom: 1px solid #fff;
+.header-store .action:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 200ms linear;
+}
+
+.header-store .action:hover:after {
+  width: 100%;
 }
