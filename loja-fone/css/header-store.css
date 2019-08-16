@@ -13,9 +13,6 @@
   font-size: 40px;
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
-}
-
-.header-store > .title:hover {
   cursor: pointer;
 }
 
@@ -41,4 +38,8 @@
 
 .header-store .action.-last {
   margin-right: 0;
+}
+
+.header-store .action:hover {
+  border-bottom: 1px solid #fff;
 }
