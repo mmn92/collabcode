@@ -8,11 +8,15 @@
   top: 9px;
   left: -47px;
   transform: translateX(-100%);
+  cursor: pointer;
 }
 
-.product-description > .hearts:hover {
-  cursor: pointer;
-  transform: translateX(-100%) scale(1.1);
+.product-description .icon {
+  transition: transform 100ms linear;
+}
+
+.product-description .icon:hover {
+  transform: scale(1.2);
 }
 
 .product-description > .product-avaliation {
@@ -21,10 +25,10 @@
 
 .product-description .star {
   margin-right: 8px;
+  cursor: pointer;
 }
 
 .product-description .star:hover {
-  cursor: pointer;
   transform: scale(1.2);
 }
 

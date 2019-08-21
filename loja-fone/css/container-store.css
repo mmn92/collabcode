@@ -1,7 +1,9 @@
 .container-store {
+  box-sizing: border-box;
   background-color: #e24647;
   position: absolute;
   width: 90%;
+  max-width: 1330px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -9,4 +11,33 @@
   box-shadow: 0 0 39px 0 rgba(50, 50, 50, 0.36);
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 1470px), (max-height: 952px) {
+  .container-store {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 970px) {
+  .container-store {
+    padding-right: 30px;
+  }
+}
+
+@media (max-height: 952px) {
+  .container-store {
+    max-width: 1330px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 415px) {
+  .container-store {
+    padding-right: 16px;
+  }
 }

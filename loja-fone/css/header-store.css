@@ -55,3 +55,51 @@
 .header-store .action:hover:after {
   width: 100%;
 }
+
+@media (max-width: 1235px) {
+  .header-store {
+    flex-direction: column;
+  }
+
+  .header-store > .title {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 970px) {
+  .header-store .search {
+    display: none;
+  }
+
+  .header-store {
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 540px) {
+  .header-store .action {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 415px) {
+  .header-store .action {
+    margin-right: 15px;
+  }
+
+  .header-store {
+    padding-left: 16px;
+  }
+}
+
+@media (max-width: 355px) {
+  .header-store .action {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 345px) {
+  .header-store > .navigation {
+    display: none;
+  }
+}
