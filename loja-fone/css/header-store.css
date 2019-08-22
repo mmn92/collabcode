@@ -66,6 +66,12 @@
   }
 }
 
+@media (max-width: 1215px) {
+  .header-store {
+    margin-bottom: 30px;
+  }
+}
+
 @media (max-width: 970px) {
   .header-store .search {
     display: none;

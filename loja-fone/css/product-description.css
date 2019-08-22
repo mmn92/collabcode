@@ -65,7 +65,26 @@
   color: inherit;
 }
 
-.product-description > .product-detail.-page-button {
-  display: inline-block;
-  margin-right: 38px;
+@media (max-width: 1265px) {
+  .product-description > .hearts {
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+  }
+}
+
+@media (max-width: 1070px) {
+  .product-description > .product-detail.-description {
+    display: none;
+  }
+  .product-description > .product-detail.-more {
+    margin-top: 35px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 495px) {
+  .product-description > .hearts {
+    transform: translate(30px, 100%);
+  }
 }

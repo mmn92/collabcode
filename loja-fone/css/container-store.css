@@ -22,6 +22,12 @@
   }
 }
 
+@media (max-width: 1070px) {
+  .container-store {
+    padding-bottom: 60px;
+  }
+}
+
 @media (max-width: 970px) {
   .container-store {
     padding-right: 30px;
