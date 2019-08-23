@@ -11,53 +11,17 @@
   transform: translateY(calc(100% + 98px));
 }
 
-@media (max-width: 1165px) {
+@media (max-width: 1310px) {
   .product-wrapper {
-    width: 460px;
-  }
-}
-
-@media (max-width: 1070px) {
-  .product-wrapper {
-    width: 250px;
+    width: 100%;
   }
 
   .product-wrapper > .button-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
     position: static;
-    transform: none;
-  }
-}
-
-@media (max-width: 870px) {
-  .product-wrapper {
-    display: block;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .product-wrapper > .button-wrapper {
-    flex-direction: row;
-    width: 456px;
-    position: absolute;
-    bottom: 0;
-    transform: translate(-20%, calc(100% + 30px));
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 495px) {
-  .product-wrapper {
-    padding-left: 30px;
-  }
-
-  .product-wrapper > .button-wrapper {
-    flex-direction: column;
-    width: auto;
+    text-align: center;
     transform: none;
-    position: static;
   }
 }

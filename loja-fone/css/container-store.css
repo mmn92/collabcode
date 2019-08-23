@@ -22,15 +22,9 @@
   }
 }
 
-@media (max-width: 1070px) {
+@media (max-width: 1310px) {
   .container-store {
-    padding-bottom: 60px;
-  }
-}
-
-@media (max-width: 970px) {
-  .container-store {
-    padding-right: 30px;
+    padding-right: 0;
   }
 }
 
@@ -39,11 +33,5 @@
     max-width: 1330px;
     margin-left: auto;
     margin-right: auto;
-  }
-}
-
-@media (max-width: 415px) {
-  .container-store {
-    padding-right: 16px;
   }
 }
