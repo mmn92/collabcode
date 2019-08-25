@@ -11,6 +11,12 @@
   cursor: pointer;
 }
 
+.product-description > .hearts.-active > .icon {
+  background-image: url("/assets/heart-active.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .product-description .icon {
   transition: transform 100ms linear;
 }
@@ -26,6 +32,12 @@
 .product-description .star {
   margin-right: 8px;
   cursor: pointer;
+}
+
+.product-description .star.-full {
+  background-image: url("/assets/star-full.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .product-description .star:hover {
