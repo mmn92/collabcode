@@ -12,17 +12,21 @@ function handleClick() {
 }
 
 function handleClickStar() {
-  let current = this;
-  current.classList.toggle("-full");
-  if (current.classList.contains("-full")) {
-    while (current.previousElementSibling) {
-      current = current.previousElementSibling;
-      current.classList.add("-full");
-    }
-  } else {
-    while (current.nextElementSibling) {
-      current.nextElementSibling.classList.remove("-full");
-      current = current.nextElementSibling;
-    }
+  this.classList.add("-full");
+  clearBefore(this);
+  clearAfter(this);
+}
+
+function clearBefore(current) {
+  while (current.previousElementSibling) {
+    current = current.previousElementSibling;
+    current.classList.add("-full");
+  }
+}
+
+function clearAfter(current) {
+  while (current.nextElementSibling) {
+    current.nextElementSibling.classList.remove("-full");
+    current = current.nextElementSibling;
   }
 }

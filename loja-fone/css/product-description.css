@@ -11,10 +11,24 @@
   cursor: pointer;
 }
 
+/*
 .product-description > .hearts.-active > .icon {
   background-image: url("/assets/heart-active.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+*/
+
+.product-description .icon.-active {
+  display: none;
+}
+
+.product-description > .hearts.-active .icon {
+  display: none;
+}
+
+.product-description > .hearts.-active .icon.-active {
+  display: block;
 }
 
 .product-description .icon {
