@@ -1,0 +1,99 @@
+.menu-wrapper {
+  display: inline-block;
+}
+
+.menu-wrapper > .menu-icon {
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 38px;
+  height: 38px;
+  padding: 8px;
+  cursor: pointer;
+  display: none;
+}
+
+.menu-wrapper > .action {
+  text-decoration: none;
+  color: inherit;
+  margin-right: 60px;
+  position: relative;
+}
+
+.menu-wrapper > .action.-last {
+  margin-right: 0;
+}
+
+.menu-wrapper > .action:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 200ms linear;
+}
+
+.menu-wrapper > .action:hover:after {
+  width: 100%;
+}
+
+@media (max-width: 540px) {
+  .menu-wrapper > .action {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 415px) {
+  .menu-wrapper > .action {
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 355px) {
+  .menu-wrapper > .action {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 345px) {
+  .menu-wrapper {
+    background-color: #fff;
+    color: #000;
+    position: absolute;
+    left: 0;
+    top: 38px;
+    width: 85%;
+    text-align: center;
+    transform: translateX(-100%);
+    transition: transform 350ms ease-in;
+  }
+
+  .menu-wrapper > .menu-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  .menu-wrapper > .menu-icon.-active {
+    display: inline-block;
+  }
+
+  .menu-wrapper.-active {
+    transform: translateX(0);
+    transition: transform 400ms linear;
+  }
+
+  .menu-wrapper.-active > .menu-icon {
+    display: inline-block;
+  }
+
+  .menu-wrapper.-active > .menu-icon.-active {
+    display: none;
+  }
+
+  .menu-wrapper > .action {
+    display: block;
+  }
+}
