@@ -61,19 +61,19 @@
     background-color: #fff;
     color: #000;
     position: absolute;
-    left: 0;
+    right: 0;
     top: 38px;
     width: 85%;
     text-align: center;
-    transform: translateX(-100%);
+    transform: translateX(100%);
     transition: transform 350ms ease-in;
   }
 
   .menu-wrapper > .menu-icon {
     position: absolute;
     top: 0;
-    right: 0;
-    transform: translateX(100%);
+    left: 0;
+    transform: translateX(-100%);
   }
 
   .menu-wrapper > .menu-icon.-active {
