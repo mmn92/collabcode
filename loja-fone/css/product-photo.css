@@ -1,10 +1,22 @@
 .product-photo {
+  box-sizing: border-box;
   display: inline-block;
   background-color: #fff;
   height: 574px;
+  width: 547px;
   border-radius: 0 150px 150px 0;
   margin-right: 156px;
+  padding-left: 50px;
   vertical-align: middle;
+}
+
+.square {
+  background-color: #fff;
+  width: 400px;
+  height: 574px;
+  position: absolute;
+  left: 0;
+  z-index: -50;
 }
 
 @media (max-width: 1325px) {
@@ -20,6 +32,12 @@
     border-radius: 0;
     text-align: center;
     margin-bottom: 30px;
+    padding-left: 0;
+    width: 100vw;
+  }
+
+  .square {
+    display: none;
   }
 }
 
