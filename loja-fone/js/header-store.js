@@ -1,5 +1,6 @@
 const $searchIcons = document.querySelectorAll(".search-icon");
-const $menuIcons = document.querySelectorAll(".menu-icon");
+const $menu = document.querySelector(".menu-wrapper");
+const $menuButton = $menu.querySelector(".-menu");
 
 $searchIcons.forEach($searchIcon => {
   $searchIcon.addEventListener("click", () => {
@@ -7,8 +8,6 @@ $searchIcons.forEach($searchIcon => {
   });
 });
 
-$menuIcons.forEach($menuIcon => {
-  $menuIcon.addEventListener("click", () => {
-    document.querySelector(".menu-wrapper").classList.toggle("-active");
-  });
+$menuButton.addEventListener("click", () => {
+  $menu.classList.toggle("-active");
 });
