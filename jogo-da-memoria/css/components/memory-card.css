@@ -17,17 +17,17 @@
   position: relative;
 }
 
-.memory-card.-flipped::after {
+.memory-card.-flipped::before {
   content: "";
   background-color: #d4d4d4;
   position: absolute;
   width: 94px;
   height: 94px;
-  top: 50%;
+  /*top: 50%;
   left: 50%;
-  transform: translate(-50%, calc(-50% + 10px));
+  transform: translate(-50%, calc(-50% + 10px));*/
+  transform: translateY(10px);
   border-radius: 50%;
-  z-index: 2;
 }
 
 .memory-card > .icon {
@@ -36,5 +36,5 @@
 }
 
 .memory-card.-flipped > .icon {
-  z-index: 3;
+  position: absolute;
 }
