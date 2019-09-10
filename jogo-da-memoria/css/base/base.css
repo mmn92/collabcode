@@ -1,7 +1,6 @@
 #root {
   display: flex;
   flex-wrap: wrap;
-  width: 374px;
   padding-top: 16px;
   justify-content: space-around;
 }

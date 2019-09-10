@@ -1,6 +1,4 @@
 const $root = document.querySelector("#root");
-const $memoryCard = document.createElement("article");
-const $flippedCard = document.createElement("article");
 
 const $icon = `
     <img 
@@ -17,11 +15,17 @@ const $iconCpp = `
     />
 `;
 
-$memoryCard.classList.add("memory-card");
+// Flipped card
+const $flippedCard = document.createElement("article");
 $flippedCard.classList.add("memory-card", "-flipped");
-
-$root.insertBefore($memoryCard, null);
 $root.insertBefore($flippedCard, null);
-
-$memoryCard.insertAdjacentHTML("afterbegin", $icon);
 $flippedCard.insertAdjacentHTML("afterbegin", $iconCpp);
+
+// Memory card
+const memoryCards = [...new Array(9)];
+memoryCards.map(() => {
+  const $memoryCard = document.createElement("article");
+  $memoryCard.classList.add("memory-card");
+  $root.insertBefore($memoryCard, null);
+  $memoryCard.insertAdjacentHTML("afterbegin", $icon);
+});
