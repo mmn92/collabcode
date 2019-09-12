@@ -1,9 +1,9 @@
-const createMemoryCard = (modifier = "", icon = "collabcode") => `
-    <article class="memory-card ${modifier}">
+const createMemoryCard = ({ alt, className, icon }) => `
+    <article class="memory-card ${className}">
       <img 
-        class='icon' 
-        src='assets/icon-${icon}.png' 
-        alt='Gueio mascote da CollabCode' 
+        src="assets/icon-${icon}.png" 
+        alt="${alt}" 
+        class="icon" 
         onClick="handleClick()"
       />
     </article>
