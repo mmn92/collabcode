@@ -11,6 +11,7 @@ function createCardsWrapper() {
       flex-wrap: wrap;
       justify-content: space-around;
       padding-top: 16px;
+      width: 100vw;
     }
     
     .cards-wrapper > .memory-card {
@@ -19,13 +20,6 @@ function createCardsWrapper() {
   `;
 
   $head.insertBefore($style, null);
-
-  $cardsWrapper.addEventListener("click", event => {
-    const $clickedElement = event.target;
-    if ($clickedElement.classList.contains("icon")) {
-      $clickedElement.parentNode.classList.toggle("-flipped");
-    }
-  });
 
   return $cardsWrapper;
 }
