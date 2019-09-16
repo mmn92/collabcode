@@ -28,11 +28,6 @@ const $memoryCardBug = createMemoryCard({
   alt: "Icone de bug"
 });
 
-const $memoryCard = createMemoryCard({
-  icon: "collabcode",
-  alt: "Gueio mascote da CollabCode"
-});
-
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardCpp);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardCpp);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJs);
@@ -41,7 +36,5 @@ $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardBug);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardBug);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
 
 $root.insertAdjacentElement("beforeend", $cardsWrapper);

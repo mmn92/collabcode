@@ -20,5 +20,12 @@ function createCardsWrapper() {
 
   $head.insertBefore($style, null);
 
+  $cardsWrapper.addEventListener("click", event => {
+    const $clickedElement = event.target;
+    if ($clickedElement.classList.contains("icon")) {
+      $clickedElement.parentNode.classList.toggle("-flipped");
+    }
+  });
+
   return $cardsWrapper;
 }

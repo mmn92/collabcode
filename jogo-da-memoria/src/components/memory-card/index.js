@@ -43,23 +43,34 @@ const memoryCard = () => {
       height: 100px;
     }
   
-    .memory-card.-flipped > .icon {
+    .memory-card > .icon.-front {
+      display: none;
+    }
+
+    .memory-card.-flipped > .icon.-front {
+      display: block;
       position: absolute;
+    }
+
+    .memory-card.-flipped > .icon.-back {
+      display: none;
     }
   `;
 
   $head.insertBefore($style, null);
 
   return ({ alt, className, icon }) => `
-    <article class="memory-card ${className}">
-      <img 
-        src="assets/icon-${icon}.png" 
-        alt="${alt}" 
-        class="icon"
-        onClick="handleClick()" 
-      />
-    </article>
-  `;
+      <article class="memory-card ${className}">
+        <img
+          src="assets/icon-collabcode.png"
+          alt="Icone do mascote da CollabCode"
+          class="icon -back"
+        />
+        <img
+          src="assets/icon-${icon}.png"
+          alt="${alt}"
+          class="icon -front"
+        />
+      </article>
+    `;
 };
-
-const handleClick = () => console.log(".");
