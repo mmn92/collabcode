@@ -79,5 +79,7 @@ const memoryCard = () => {
 };
 
 const handleClick = $component => {
-  $component.classList.toggle("-active");
+  if (updateCard($component)) {
+    $component.classList.toggle("-active");
+  }
 };

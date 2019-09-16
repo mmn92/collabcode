@@ -23,3 +23,30 @@ function createCardsWrapper() {
 
   return $cardsWrapper;
 }
+
+const cardWatcher = () => {
+  let activeCards = 0;
+
+  return $component => {
+    if ($component.classList.contains("-active") || activeCards >= 2) {
+      return false;
+    } else {
+      activeCards++;
+      if (activeCards >= 2) {
+        setTimeout(() => {
+          activeCards = 0;
+          resetCards();
+        }, 2000);
+      }
+      return true;
+    }
+  };
+};
+
+const resetCards = () => {
+  document
+    .querySelectorAll(".-active")
+    .forEach($card => $card.classList.remove("-active"));
+};
+
+const updateCard = cardWatcher();
