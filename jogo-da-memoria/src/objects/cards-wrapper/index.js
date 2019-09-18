@@ -1,3 +1,5 @@
+let activeMemoryCards = 0;
+
 function createCardsWrapper() {
   const $cardsWrapper = document.createElement("section");
   $cardsWrapper.classList.add("cards-wrapper");
@@ -21,32 +23,10 @@ function createCardsWrapper() {
 
   $head.insertBefore($style, null);
 
+  $cardsWrapper.addEventListener("click", event => {
+    activeMemoryCards = $cardsWrapper.querySelectorAll(".memory-card.-active")
+      .length;
+  });
+
   return $cardsWrapper;
 }
-
-const cardWatcher = () => {
-  let activeCards = 0;
-
-  return $component => {
-    if ($component.classList.contains("-active") || activeCards >= 2) {
-      return false;
-    } else {
-      activeCards++;
-      if (activeCards >= 2) {
-        setTimeout(() => {
-          activeCards = 0;
-          resetCards();
-        }, 2000);
-      }
-      return true;
-    }
-  };
-};
-
-const resetCards = () => {
-  document
-    .querySelectorAll(".-active")
-    .forEach($card => $card.classList.remove("-active"));
-};
-
-const updateCard = cardWatcher();
