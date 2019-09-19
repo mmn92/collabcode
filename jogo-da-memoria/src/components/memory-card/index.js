@@ -21,15 +21,18 @@ const memoryCard = () => {
       position: absolute;
     }
 
-    .memory-card.-active .card {
+    .memory-card.-active .card,
+    .memory-card.-check .card {
       display: none;
     }
 
-    .memory-card.-active .card.-flipped {
+    .memory-card.-active .card.-flipped,
+    .memory-card.-check .card.-flipped {
       display: flex;
     }
 
-    .memory-card .card.-flipped {
+    .memory-card .card.-flipped,
+    .memory-card.-check .card {
       background-color: #fff;
       box-sizing: border-box;
       padding-bottom: 7px;
@@ -79,21 +82,39 @@ const memoryCard = () => {
 };
 
 const handleClick = $component => {
-  if (activeMemoryCards < 2) {
+  if (activeMemoryCards < 2 && canFlip($component)) {
     $component.classList.toggle("-active");
-  }
 
-  if (activeMemoryCards === 1) {
-    setTimeout(() => {
-      const $activeMemoryCards = document.querySelectorAll(
-        ".memory-card.-active"
-      );
+    if (activeMemoryCards === 1) {
+      setTimeout(() => {
+        const $activeMemoryCards = document.querySelectorAll(
+          ".memory-card.-active"
+        );
 
-      $activeMemoryCards.forEach($memoryCard => {
-        $memoryCard.classList.remove("-active");
-      });
+        if (checkCards($activeMemoryCards)) {
+          score++;
+          console.log("Acertou o par. Score: ", score);
+          $activeMemoryCards.forEach($memoryCard => {
+            $memoryCard.classList.add("-check");
+          });
+        } else {
+          console.log("Errou o par. Score: ", score);
+        }
 
-      activeMemoryCards = 0;
-    }, 1500);
+        $activeMemoryCards.forEach($memoryCard => {
+          $memoryCard.classList.remove("-active");
+        });
+
+        activeMemoryCards = 0;
+      }, 1500);
+    }
   }
 };
+
+const checkCards = $activeCards =>
+  $activeCards[0].querySelector(".icon").src ===
+  $activeCards[1].querySelector(".icon").src;
+
+const canFlip = $component =>
+  !$component.classList.contains("-active") &&
+  !$component.classList.contains("-check");
