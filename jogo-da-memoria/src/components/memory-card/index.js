@@ -106,14 +106,14 @@ const handleClick = $component => {
         });
 
         activeMemoryCards = 0;
-      }, 1500);
+      }, 1000);
     }
   }
 };
 
 const checkCards = $activeCards =>
-  $activeCards[0].querySelector(".icon").src ===
-  $activeCards[1].querySelector(".icon").src;
+  $activeCards[0].querySelector(".icon").getAttribute("src") ===
+  $activeCards[1].querySelector(".icon").getAttribute("src");
 
 const canFlip = $component =>
   !$component.classList.contains("-active") &&
