@@ -83,22 +83,22 @@ const memoryCard = () => {
 
 const handleClick = $component => {
   if (activeMemoryCards < 2 && canFlip($component)) {
-    $component.classList.toggle("-active");
+    $component.classList.add("-active");
 
-    if (activeMemoryCards === 1) {
+    if (scoreCheck()) {
       setTimeout(() => {
         const $activeMemoryCards = document.querySelectorAll(
           ".memory-card.-active"
         );
 
         if (checkCards($activeMemoryCards)) {
-          score++;
-          console.log("Acertou o par. Score: ", score);
+          store.score++;
+          console.log("Acertou o par. Score: ", store.score);
           $activeMemoryCards.forEach($memoryCard => {
             $memoryCard.classList.add("-check");
           });
         } else {
-          console.log("Errou o par. Score: ", score);
+          console.log("Errou o par. Score: ", store.score);
         }
 
         $activeMemoryCards.forEach($memoryCard => {
@@ -118,3 +118,5 @@ const checkCards = $activeCards =>
 const canFlip = $component =>
   !$component.classList.contains("-active") &&
   !$component.classList.contains("-check");
+
+const scoreCheck = () => activeMemoryCards === 1;
