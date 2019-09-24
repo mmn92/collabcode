@@ -1,7 +1,8 @@
-const memoryCard = () => {
-  const $head = document.querySelector("head");
-  const $style = document.createElement("style");
-  $style.textContent = `
+const memoryCard = (function() {
+  const create = () => {
+    const $head = document.querySelector("head");
+    const $style = document.createElement("style");
+    $style.textContent = `
     .memory-card {
       width: 155px;
       height: 155px;
@@ -20,17 +21,17 @@ const memoryCard = () => {
       cursor: pointer;
       position: absolute;
     }
-
+    
     .memory-card.-active .card,
     .memory-card.-check .card {
       display: none;
     }
-
+    
     .memory-card.-active .card.-flipped,
     .memory-card.-check .card.-flipped {
       display: flex;
     }
-
+    
     .memory-card .card.-flipped,
     .memory-card.-check .card {
       background-color: #fff;
@@ -48,75 +49,81 @@ const memoryCard = () => {
       transform: translateY(10px);
       border-radius: 50%;
     }
-  
+    
     .memory-card .card > .icon {
       width: 100px;
       height: 100px;
     }
-
+    
     .memory-card .card.-flipped > .icon {
       position: absolute;
     }
-  `;
-
-  $head.insertBefore($style, null);
-
-  return ({ alt, className, icon }) => `
-      <div class="memory-card" onClick="handleClick(this)">
-        <article class="card -flipped">
-          <img
-            src="assets/icon-${icon}.png"
-            alt="${alt}"
-            class="icon"
-          />
-        </article>
-        <article class="card">
-          <img
-            src="assets/icon-collabcode.png"
-            alt="Icone do mascote da CollabCode"
-            class="icon"
-          />
-        </article>
-      </div>
     `;
-};
 
-const handleClick = $component => {
-  if (activeMemoryCards < 2 && canFlip($component)) {
-    $component.classList.add("-active");
+    $head.insertBefore($style, null);
 
-    if (scoreCheck()) {
-      setTimeout(() => {
-        const $activeMemoryCards = document.querySelectorAll(
-          ".memory-card.-active"
-        );
+    return ({ alt, icon }) => `
+  <div class="memory-card" onClick="memoryCard.handleClick(this)">
+    <article class="card -flipped">
+      <img
+        src="assets/icon-${icon}.png"
+        alt="${alt}"
+        class="icon"
+      />
+    </article>
+    <article class="card">
+      <img
+        src="assets/icon-collabcode.png"
+        alt="Icone do mascote da CollabCode"
+        class="icon"
+      />
+    </article>
+  </div>
+    `;
+  };
 
-        if (checkCards($activeMemoryCards)) {
-          store.score++;
-          console.log("Acertou o par. Score: ", store.score);
+  const handleClick = $component => {
+    if (activeMemoryCards < 2 && canFlip($component)) {
+      $component.classList.add("-active");
+
+      if (scoreCheck()) {
+        setTimeout(() => {
+          const $activeMemoryCards = document.querySelectorAll(
+            ".memory-card.-active"
+          );
+
+          if (checkCards($activeMemoryCards)) {
+            store.score++;
+            console.log("Acertou o par. Score: ", store.score);
+            $activeMemoryCards.forEach($memoryCard => {
+              $memoryCard.classList.add("-check");
+            });
+          } else {
+            console.log("Errou o par. Score: ", store.score);
+          }
+
           $activeMemoryCards.forEach($memoryCard => {
-            $memoryCard.classList.add("-check");
+            $memoryCard.classList.remove("-active");
           });
-        } else {
-          console.log("Errou o par. Score: ", store.score);
-        }
 
-        $activeMemoryCards.forEach($memoryCard => {
-          $memoryCard.classList.remove("-active");
-        });
-
-        activeMemoryCards = 0;
-      }, 1000);
+          activeMemoryCards = 0;
+        }, 1000);
+      }
     }
-  }
-};
+  };
 
-const checkCards = $activeCards =>
-  $activeCards[0].querySelector(".icon").getAttribute("src") ===
-  $activeCards[1].querySelector(".icon").getAttribute("src");
+  const checkCards = $activeCards =>
+    $activeCards[0].querySelector(".icon").getAttribute("src") ===
+    $activeCards[1].querySelector(".icon").getAttribute("src");
 
-const canFlip = $component =>
-  !$component.classList.contains("-active") &&
-  !$component.classList.contains("-check");
+  const canFlip = $component =>
+    !$component.classList.contains("-active") &&
+    !$component.classList.contains("-check");
 
-const scoreCheck = () => activeMemoryCards === 1;
+  const scoreCheck = () => activeMemoryCards === 1;
+
+  return {
+    create,
+    handleClick
+  };
+})();
