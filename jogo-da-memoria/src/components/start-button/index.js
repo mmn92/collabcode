@@ -35,11 +35,11 @@ const startButton = (function() {
     $head.insertBefore($style, null);
   };
 
-  module.render = () => {
+  module.render = content => {
     module._style();
     return `
-        <button class="start-button" onClick="startButton.handleClick()">
-            Go!
+        <button class="start-button">
+            ${content}
         </button>
     `;
   };

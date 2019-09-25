@@ -3,12 +3,9 @@
 
   const $cardsWrapper = createCardsWrapper();
   const createMemoryCard = memoryCard.create();
-
   const $scoreBar = scoreBar.create();
 
-  const $blockLayer = blockLayer.render();
-
-  const $startButton = startButton.render();
+  const $layerWrapper = layerWrapper.render("Go!");
 
   const $memoryCardCpp = createMemoryCard({
     icon: "c",
@@ -38,6 +35,5 @@
 
   $root.insertAdjacentHTML("afterbegin", $scoreBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
-  $root.insertAdjacentHTML("beforeend", $blockLayer);
-  $root.insertAdjacentHTML("beforeend", $startButton);
+  $root.insertAdjacentHTML("beforeend", $layerWrapper);
 })();
