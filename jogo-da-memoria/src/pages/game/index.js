@@ -6,6 +6,8 @@
 
   const $scoreBar = scoreBar.create();
 
+  const $blockLayer = blockLayer.render();
+
   const $startButton = startButton.render();
 
   const $memoryCardCpp = createMemoryCard({
@@ -36,5 +38,6 @@
 
   $root.insertAdjacentHTML("afterbegin", $scoreBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
+  $root.insertAdjacentHTML("beforeend", $blockLayer);
   $root.insertAdjacentHTML("beforeend", $startButton);
 })();

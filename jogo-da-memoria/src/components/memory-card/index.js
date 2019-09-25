@@ -94,12 +94,9 @@ const memoryCard = (function() {
 
           if (checkCards($activeMemoryCards)) {
             scoreBar.increaseScore();
-            console.log("Acertou o par. Score: ", store.score);
             $activeMemoryCards.forEach($memoryCard => {
               $memoryCard.classList.add("-check");
             });
-          } else {
-            console.log("Errou o par. Score: ", store.score);
           }
 
           $activeMemoryCards.forEach($memoryCard => {

@@ -23,6 +23,13 @@ const startButton = (function() {
         font-size: 18px;
         text-transform: uppercase;
       }
+
+      .start-button.-active {
+        width: 0;
+        height: 0;
+        font-size: 0;
+        transition: all 200ms linear;
+      }
       `;
 
     $head.insertBefore($style, null);
@@ -31,13 +38,24 @@ const startButton = (function() {
   module.render = () => {
     module._style();
     return `
-        <button class="start-button">
+        <button class="start-button" onClick="startButton.handleClick()">
             Go!
         </button>
     `;
   };
 
+  module.handleClick = () => {
+    const $layer = document.querySelector(".block-layer");
+    const $button = document.querySelector(".start-button");
+
+    $button.classList.add("-active");
+    setTimeout(() => {
+      $layer.classList.add("-active");
+    }, 200);
+  };
+
   return {
-    render: module.render
+    render: module.render,
+    handleClick: module.handleClick
   };
 })();
