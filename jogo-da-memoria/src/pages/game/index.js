@@ -6,7 +6,7 @@
 
   const $scoreBar = scoreBar.create();
 
-  const $startButton = startButton.create();
+  const $startButton = startButton.render();
 
   const $memoryCardCpp = createMemoryCard({
     icon: "c",
