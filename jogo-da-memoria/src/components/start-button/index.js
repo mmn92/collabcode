@@ -26,7 +26,9 @@ const startButton = (function() {
 
       .start-button.-disable {
         opacity: 0;
-        transition: all 200ms linear;
+        transform: scale(3) translateX(-50%);
+        transform-origin: left;
+        transition: opacity 200ms linear, transform 200ms linear;
       }
       `;
 
