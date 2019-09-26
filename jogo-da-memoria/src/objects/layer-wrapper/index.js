@@ -2,8 +2,14 @@ const layerWrapper = (function() {
   const module = {};
 
   module.handleClick = $component => {
-    $component.querySelector(".block-layer").classList.add("-active");
-    $component.querySelector(".start-button").classList.add("-active");
+    $component.querySelector(".start-button").classList.add("-disable");
+    $component.querySelector(".block-layer").classList.add("-disable");
+  };
+
+  module.handleTransitionEnd = (event, $component) => {
+    if (event.target.classList.contains("block-layer")) {
+      $component.remove();
+    }
   };
 
   module.render = content => {
@@ -11,7 +17,7 @@ const layerWrapper = (function() {
     const $startButton = startButton.render(content);
 
     return `
-            <div class="layer-wrapper" onClick="layerWrapper.handleClick(this)">
+            <div class="layer-wrapper" onClick="layerWrapper.handleClick(this)" onTransitionEnd="layerWrapper.handleTransitionEnd(event, this)">
                 ${$blockLayer}
                 ${$startButton}
             </div>
@@ -20,6 +26,7 @@ const layerWrapper = (function() {
 
   return {
     render: module.render,
-    handleClick: module.handleClick
+    handleClick: module.handleClick,
+    handleTransitionEnd: module.handleTransitionEnd
   };
 })();

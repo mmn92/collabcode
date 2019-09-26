@@ -24,10 +24,8 @@ const startButton = (function() {
         text-transform: uppercase;
       }
 
-      .start-button.-active {
-        width: 0;
-        height: 0;
-        font-size: 0;
+      .start-button.-disable {
+        opacity: 0;
         transition: all 200ms linear;
       }
       `;

@@ -15,9 +15,9 @@ const blockLayer = (function() {
             background-color: rgba(0, 0, 0, 0.5);
         }
 
-        .block-layer.-active {
-            top: -9999px;
-            transition: all 2000ms linear;
+        .block-layer.-disable {
+            opacity: 0;
+            transition: all 300ms 200ms linear;
         }
     `;
 
