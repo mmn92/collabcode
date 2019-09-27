@@ -7,29 +7,8 @@ const logoWrapper = (function() {
 
     $style.textContent = `
       .logo-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 141px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .logo-wrapper::before {
-        content: "";
-        background-color: #fff;
-        width: 252px;
-        height: 252px;
-        border-radius: 50%;
-        position: absolute;
-        top: -39px;
-        left: -40px;
-      }
-
-      .logo-wrapper > .logo {
-        margin-bottom: 38px;
-        z-index: 1;
+        text-align: center;
+        transform: translateY(-25%);
       }
     `;
     $head.insertAdjacentElement("beforeend", $style);
