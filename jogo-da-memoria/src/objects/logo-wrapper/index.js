@@ -27,7 +27,7 @@ const logoWrapper = (function() {
         left: -40px;
       }
 
-      .logo-wrapper > .logo-img {
+      .logo-wrapper > .logo {
         margin-bottom: 38px;
         z-index: 1;
       }
@@ -35,20 +35,13 @@ const logoWrapper = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.render = (text = "") => {
+  module.render = (...$children) => {
     module._style();
 
-    const $logo = logo.render();
-    const $title = title.render(text);
     return `
-      <dl class="logo-wrapper">
-        <dd class="logo-img">
-          ${$logo}
-        </dd>
-        <dt class="logo-title">
-          ${$title}
-        </dt>
-      </dl>
+      <div class="logo-wrapper">
+        ${$children.join("")}
+      </div>
     `;
   };
 

@@ -7,9 +7,7 @@ const logo = (function() {
 
     $style.textContent = `
       .logo {
-        display: block;
         width: 171px;
-        height: 175px;
       }
     `;
     $head.insertAdjacentElement("beforeend", $style);
