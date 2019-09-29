@@ -16,6 +16,11 @@ const formInput = (function() {
         padding-top: 12px; 
       }
 
+      .form-input::placeholder {
+        color: #3a4042;
+        opacity: 0.3;
+      }
+
       .form-input + .form-label{
         margin-top: 30px;
       }
@@ -37,7 +42,7 @@ const formInput = (function() {
     module._style();
 
     return `
-      <input class="form-input" name="${content}" type="text" required />
+      <input class="form-input" name="${content}" type="text" placeholder="${content}" required />
     `;
   };
 
