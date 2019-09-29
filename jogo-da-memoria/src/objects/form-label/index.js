@@ -7,6 +7,7 @@ const formLabel = (function() {
 
     $style.textContent = `
       .form-label {
+        display: block;
         font-size: 16px;
         color: #3a4042;
         opacity: 0.5;

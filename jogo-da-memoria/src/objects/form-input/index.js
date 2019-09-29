@@ -15,6 +15,14 @@ const formInput = (function() {
         padding-bottom: 12px; 
         padding-top: 12px; 
       }
+
+      .form-input + .form-label{
+        margin-top: 30px;
+      }
+
+      .form-input + .submit-button {
+        margin-top: 45px;
+      }
     `;
 
     $head.insertAdjacentElement("beforeend", $style);
@@ -29,7 +37,7 @@ const formInput = (function() {
     module._style();
 
     return `
-      <input class="form-input" name="${content}" type="text" placeholder="Please insert ${content}" required />
+      <input class="form-input" name="${content}" type="text" required />
     `;
   };
 

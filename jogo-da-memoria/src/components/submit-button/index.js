@@ -14,6 +14,7 @@ const submitButton = (function() {
         color: #fff;
         text-transform: uppercase;
         font-weight: bold;
+        cursor: pointer;
       }
     `;
     $head.insertAdjacentElement("beforeend", $style);
@@ -22,7 +23,7 @@ const submitButton = (function() {
   module.render = content => {
     module._style();
 
-    return `<button class="submit-button">${content}</button>`;
+    return `<input class="submit-button" type="submit" value=${content} />`;
   };
 
   return {
