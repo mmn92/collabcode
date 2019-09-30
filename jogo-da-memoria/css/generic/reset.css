@@ -15,3 +15,8 @@ input {
   box-shadow: none;
   font-family: inherit;
 }
+
+a {
+  text-decoration: none;
+  font-family: inherit;
+}

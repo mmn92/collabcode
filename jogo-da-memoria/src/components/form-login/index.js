@@ -1,4 +1,4 @@
-const formSignup = (function() {
+const formLogin = (function() {
   const module = {};
 
   module._style = () => {
@@ -6,23 +6,29 @@ const formSignup = (function() {
     const $style = document.createElement("style");
 
     $style.textContent = `
-      .form-signup {
+      .form-login {
         padding: 0 35px 35px;
+      }
+
+      .form-login > .forget-password {
+        display: block;
+        margin-top: 45px;
+        margin-bottom: 100px;
+        text-align: right;
+        cursor: pointer;
+      }
+
+      .form-login > .forget-password > .form-label {
+        font-size: 14px;
       }
     `;
     $head.insertAdjacentElement("beforeend", $style);
   };
 
   module._children = () => {
-    const $userLabel = formLabel.render("Username");
+    const $userLabel = formLabel.render("Username or E-mail");
     const $userInput = formInput.render({
       inputType: "text",
-      content: "Name-example"
-    });
-
-    const $emailLabel = formLabel.render("E-mail");
-    const $emailInput = formInput.render({
-      inputType: "email",
       content: "example@email.com"
     });
 
@@ -32,35 +38,27 @@ const formSignup = (function() {
       content: "Password"
     });
 
-    const $confirmPasswordLabel = formLabel.render("Confirm Password");
-    const $confirmPasswordInput = formInput.render({
-      inputType: "password",
-      content: "Comfirm Password"
-    });
+    const $forgetLabel = formLabel.render("Forget Password?");
 
-    const $submitButton = submitButton.render("Submit");
+    const $submitBtn = submitButton.render("Login");
 
     return `
       ${$userLabel}
       ${$userInput}
 
-      ${$emailLabel}
-      ${$emailInput}
-
       ${$passwordLabel}
       ${$passwordInput}
+      
+      <a class="forget-password" href="#">${$forgetLabel}</a>
 
-      ${$confirmPasswordLabel}
-      ${$confirmPasswordInput}
-
-      ${$submitButton}
+      ${$submitBtn}
     `;
   };
 
   module.render = () => {
     module._style();
 
-    return `<form class="form-signup" action="" method="POST">${module._children()}</form>`;
+    return `<form class="form-login" action="" mathod="POST">${module._children()}</form>`;
   };
 
   return {
