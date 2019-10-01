@@ -10,16 +10,21 @@ const formLogin = (function() {
         padding: 0 35px 35px;
       }
 
+      .form-login > .form-icon {
+        float: right;
+        transform: translate(-10px, calc(-100% - 12px));
+      }
+
       .form-login > .forget-password {
         display: block;
         margin-top: 45px;
         margin-bottom: 100px;
         text-align: right;
-        cursor: pointer;
       }
-
+      
       .form-login > .forget-password > .form-label {
         font-size: 14px;
+        cursor: pointer;
       }
     `;
     $head.insertAdjacentElement("beforeend", $style);
@@ -38,7 +43,15 @@ const formLogin = (function() {
       content: "Password"
     });
 
-    const $forgetLabel = formLabel.render("Forget Password?");
+    const $hiddenIcon = formIcon.render({
+      src: "assets/hidden.png",
+      alt: "Icon to show or hide password"
+    });
+
+    const $formLink = formLink.render({
+      href: "#",
+      content: "Forget Password?"
+    });
 
     const $submitBtn = submitButton.render("Login");
 
@@ -48,8 +61,9 @@ const formLogin = (function() {
 
       ${$passwordLabel}
       ${$passwordInput}
+      ${$hiddenIcon}
       
-      <a class="forget-password" href="#">${$forgetLabel}</a>
+      ${$formLink}
 
       ${$submitBtn}
     `;

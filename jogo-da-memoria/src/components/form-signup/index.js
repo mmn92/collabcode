@@ -9,6 +9,11 @@ const formSignup = (function() {
       .form-signup {
         padding: 0 35px 35px;
       }
+
+      .form-signup > .form-icon {
+        float: right;
+        transform: translate(-10px, calc(-100% - 12px));
+      }
     `;
     $head.insertAdjacentElement("beforeend", $style);
   };
@@ -32,10 +37,20 @@ const formSignup = (function() {
       content: "Password"
     });
 
+    const $hiddenIcon = formIcon.render({
+      src: "assets/hidden.png",
+      alt: "Icon to show or hide password"
+    });
+
     const $confirmPasswordLabel = formLabel.render("Confirm Password");
     const $confirmPasswordInput = formInput.render({
       inputType: "password",
       content: "Comfirm Password"
+    });
+
+    const $confirmHiddenIcon = formIcon.render({
+      src: "assets/hidden.png",
+      alt: "Icon to show or hide password"
     });
 
     const $submitButton = submitButton.render("Submit");
@@ -49,9 +64,11 @@ const formSignup = (function() {
 
       ${$passwordLabel}
       ${$passwordInput}
+      ${$hiddenIcon}
 
       ${$confirmPasswordLabel}
       ${$confirmPasswordInput}
+      ${$confirmHiddenIcon}
 
       ${$submitButton}
     `;
