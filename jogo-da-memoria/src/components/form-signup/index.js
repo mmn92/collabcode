@@ -53,7 +53,7 @@ const formSignup = (function() {
       alt: "Icon to show or hide password"
     });
 
-    const $submitButton = submitButton.render("Submit");
+    const $submitButton = submitButton.render("Submit", "login");
 
     return `
       ${$userLabel}

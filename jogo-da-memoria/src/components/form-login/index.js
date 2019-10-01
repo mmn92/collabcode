@@ -53,7 +53,7 @@ const formLogin = (function() {
       content: "Forget Password?"
     });
 
-    const $submitBtn = submitButton.render("Login");
+    const $submitBtn = submitButton.render("Login", "game");
 
     return `
       ${$userLabel}

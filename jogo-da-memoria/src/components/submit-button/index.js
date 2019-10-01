@@ -20,10 +20,10 @@ const submitButton = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.render = content => {
+  module.render = (content = "", action = "login") => {
     module._style();
 
-    return `<input class="submit-button" type="submit" value=${content} />`;
+    return `<input class="submit-button" type="submit" value=${content} onClick="routes.${action}()" />`;
   };
 
   return {
