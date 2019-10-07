@@ -20,13 +20,18 @@ const submitButton = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
+  module.handleClick = $path => {
+    window.location.hash = `#/${$path}`;
+  };
+
   module.render = (content = "", action = "login") => {
     module._style();
 
-    return `<input class="submit-button" type="submit" value=${content} onClick="routes.${action}()" />`;
+    return `<input class="submit-button" type="submit" value=${content} onClick="submitButton.handleClick('${action}')" />`;
   };
 
   return {
-    render: module.render
+    render: module.render,
+    handleClick: module.handleClick
   };
 })();
