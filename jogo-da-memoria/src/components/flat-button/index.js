@@ -28,6 +28,7 @@ const flatButton = (function() {
 
   module.handleClick = $path => {
     window.location.hash = `#/${$path}`;
+    window.location.reload();
   };
 
   module.render = (content = "", active = false, action = "login") => {
