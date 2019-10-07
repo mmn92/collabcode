@@ -7,5 +7,5 @@
   paths["#/signup"] = routes.signup;
   paths["#/game"] = routes.game;
 
-  paths[hash]();
+  paths[hash] ? paths[hash]() : routes.notFound();
 })();

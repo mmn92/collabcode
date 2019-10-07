@@ -76,9 +76,19 @@ const routes = (function() {
     $root.insertAdjacentHTML("beforeend", $layerWrapper);
   };
 
+  module.notFound = () => {
+    const $root = document.querySelector("#root");
+    $root.innerHTML = "";
+
+    const $notFound = title.render("Página não encontrada");
+
+    $root.insertAdjacentHTML("beforeend", $notFound);
+  };
+
   return {
     login: module.login,
     signup: module.signup,
-    game: module.game
+    game: module.game,
+    notFound: module.notFound
   };
 })();
