@@ -10,7 +10,12 @@ const scoreBar = (function() {
             background-color: #3a4042;
             height: 50px;
             text-align: center;
-            font-family: 'Roboto', sans-serif;
+        }
+
+        .score-bar > .return-button {
+          position: absolute;
+          left: 4px;
+          top: 4px;
         }
 
         .score-bar > .score {
@@ -25,8 +30,14 @@ const scoreBar = (function() {
   module.create = () => {
     module._style();
 
+    const $returnButton = returnButton.render({
+      content: "Voltar",
+      path: "login"
+    });
+
     return `
     <header class="score-bar">
+        ${$returnButton}
         <span class="score">0</span>
     </header>
   `;
