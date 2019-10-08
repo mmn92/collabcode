@@ -9,3 +9,7 @@
 
   paths[hash] ? paths[hash]() : routes.notFound();
 })();
+
+window.addEventListener("hashchange", event => {
+  location.reload();
+});
