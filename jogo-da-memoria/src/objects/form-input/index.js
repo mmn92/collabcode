@@ -38,11 +38,11 @@ const formInput = (function() {
     return emailRegex.test(email);
   };
 
-  module.render = ({ inputType = "text", content = "" }) => {
+  module.render = ({ inputType = "text", content = "", inputId = "" }) => {
     module._style();
 
     return `
-      <input class="form-input" type="${inputType}" placeholder="${content}" required />
+      <input class="form-input" id="${inputId}" type="${inputType}" placeholder="${content}" required />
     `;
   };
 

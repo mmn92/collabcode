@@ -34,13 +34,15 @@ const formLogin = (function() {
     const $userLabel = formLabel.render("Username or E-mail");
     const $userInput = formInput.render({
       inputType: "text",
-      content: "example@email.com"
+      content: "example@email.com",
+      inputId: "email"
     });
 
     const $passwordLabel = formLabel.render("Password");
     const $passwordInput = formInput.render({
       inputType: "password",
-      content: "Password"
+      content: "Password",
+      inputId: "password"
     });
 
     const $hiddenIcon = formIcon.render({
@@ -69,13 +71,38 @@ const formLogin = (function() {
     `;
   };
 
+  module._validateEmail = email => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return emailRegex.test(email);
+  };
+
+  module._validatePassword = password => password.length >= 8;
+
+  module._clearInputs = ($email, $password) => {
+    $email.value = "";
+    $password.value = "";
+  };
+
+  module.validateSubmit = function() {
+    const email = document.querySelector("#email");
+    const password = document.querySelector("#password");
+    const valid =
+      module._validateEmail(email.value) &&
+      module._validatePassword(password.value);
+
+    module._clearInputs(email, password);
+
+    return valid;
+  };
+
   module.render = () => {
     module._style();
 
-    return `<form class="form-login" action="" mathod="POST">${module._children()}</form>`;
+    return `<form class="form-login" action="" method="POST">${module._children()}</form>`;
   };
 
   return {
-    render: module.render
+    render: module.render,
+    validateSubmit: module.validateSubmit
   };
 })();

@@ -21,8 +21,10 @@ const submitButton = (function() {
   };
 
   module.handleClick = $path => {
-    window.location.hash = `#/${$path}`;
-    window.location.reload();
+    if (formLogin.validateSubmit()) {
+      window.location.hash = `#/${$path}`;
+      window.location.reload();
+    }
   };
 
   module.render = (content = "", action = "login") => {
